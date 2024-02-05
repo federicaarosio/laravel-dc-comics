@@ -9,13 +9,13 @@
         @yield('head-content')
     </head>
     <body>
-        @include('layouts.partials.header')
+        @include('partials.header')
 
         <main>
             @yield('main-content')
         </main>
 
-        @include('layouts.partials.footer')
+        @include('partials.footer')
 
         @yield('script-content')
     </body>
