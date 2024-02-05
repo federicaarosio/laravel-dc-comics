@@ -1,0 +1,39 @@
+@import "./variables";
+@import "./mixins";
+
+header {
+    background-color: $header-bg-color;
+    margin-top: 15px;
+}
+
+section.header-navigation {
+    @include flex(row, space-between, center);
+    width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+img.logo {
+    width: 70px;
+}
+
+ul.navigation-menu {
+    text-transform: uppercase;
+
+    li.active {
+        color: $accent;
+    }
+}
+
+section.jumbo {
+    // da sistemare
+    background: url('../img/jumbotron.jpg'); 
+    background-size: cover;
+    height: 2rem;
+}
+
+
+
+

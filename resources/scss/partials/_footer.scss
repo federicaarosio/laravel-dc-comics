@@ -1,0 +1,112 @@
+@import "./variables";
+@import "./mixins";
+
+footer {
+    background-image: url(../img/footer-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    section.upper-footer {
+        @include flex(row, space-between, center);
+        height: 100%;
+        width: 1100px;
+        margin: 0 auto;
+        font-size: .7rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: $small-text-color;
+        padding: 2rem 0;
+        position: relative;
+        overflow: hidden;
+
+
+
+        section.navigation-footer {
+            width: 40%;
+            @include flex(column, start, start);
+            
+
+            .dc-logo-overlay {
+                position: absolute;
+                top: -30%;
+                right: 0;
+                overflow: hidden;
+            }
+        }
+
+       
+
+        .columns-wrapper {
+            @include flex(row, start, start);
+            gap: 4rem;
+
+            h1.footer-title {
+                color: $main-text-color;
+                text-transform: uppercase;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 1rem;
+            }
+        }
+
+        span {
+            color: $accent;
+        }
+
+        section.footer-logo {
+            height: 100%;
+
+            img {
+                overflow: hidden;
+                width: 400px;
+            }
+        }
+
+
+
+    }
+
+    section.lower-footer {
+        background-color: $footer-bg-color;
+
+        div.wrapper {
+            width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 0;
+            @include flex(row, space-between, center);
+
+            button.sign-up {
+                background-color: transparent;
+                border: 2px solid $accent;
+                color: $main-text-color;
+                font-size: .8rem;
+                font-weight: bold;
+                padding: .8rem 1.2rem;
+                text-transform: uppercase;
+
+            }
+
+            div.socials {
+                @include flex(row, end, center);
+                div.follow-us {
+                    color: $accent;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    margin-right: 1rem;
+
+                }
+
+                div.icon {
+                    margin-right: 1rem;
+                    color: $footer-bg-color;
+                    background-color: $small-text-color;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    @include flex(row, center, center)
+                }
+            }
+
+        }
+    }
+}
