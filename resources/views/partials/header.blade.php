@@ -3,11 +3,11 @@
         <nav class="navigation">
             <ul class="d-flex gap-4 navigation-menu">
                 <li>
-                    <a href="{{route('comics.index')}}">
+                    <a href="{{route('pages.home')}}">
                     Home
                     </a>
                 </li>
-                <li class="active"><a href="">Comics</a></li>
+                <li class="active"><a href="{{route('comics.index')}}">Comics</a></li>
                 <li>Movies</li>
                 <li>Tv</li>
                 <li>Games</li>
