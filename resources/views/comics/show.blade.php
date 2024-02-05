@@ -11,9 +11,13 @@
 
         <div class="article-container">
 
-                <article>
+                <article class="single-article">
                     <img src="{{ $comic['thumb'] }}" alt="comic thumb" class="comic-thumb">
-                    <p>{{ $comic['series'] }}</p>
+                    <p>Series: {{ $comic['series'] }}</p>
+                    <p class="description">Description: {{ $comic['description'] }}</p>
+                    <p>Price: {{ $comic['price'] }}</p>
+                    <p>Sale Date: {{ $comic['sale_date'] }}</p>
+                    <p>Type: {{ $comic['type'] }}</p>
                 </article>
 
         </div>
