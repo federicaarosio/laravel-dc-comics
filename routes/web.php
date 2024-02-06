@@ -30,3 +30,4 @@ Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show'
 
 //Movie
 Route::get('/movies', [MovieController::class, 'index'])->name('movies.index');
+Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movies.show');
