@@ -17,7 +17,7 @@
                     <a href="{{route('movies.index')}}">Movies</a>
                 </li>
                 <li>
-                    <a href="{{route('comics.create')}}">Add Movies</a>
+                    <a href="{{route('movies.create')}}">Add Movies</a>
                 </li>
                 <li>Games</li>
                 <li>Collectibles</li>

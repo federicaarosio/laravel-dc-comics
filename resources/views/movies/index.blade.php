@@ -13,7 +13,7 @@
         <div class="article-container d-flex justify-content-between flex-wrap">
             
             @foreach ($movies as $movie)
-            <article class="card" style="width: 18rem;">
+            <article class="card mb-3" style="width: 18rem;">
                 <a href="{{ route('movies.show', $movie['id']) }}">
 
                 <img src="{{ $movie['src'] }}" class="card-img-top" alt="...">
