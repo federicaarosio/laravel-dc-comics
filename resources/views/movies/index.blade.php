@@ -4,22 +4,20 @@
 
 <section class="movies">
 
-    <div class="comics-container">
+    <div class="comics-container container">
 
-        <span class="tag">
+        <h1 class="tag">
             Movies
-        </span>
+        </h1>
 
-        <div class="article-container">
+        <div class="article-container d-flex justify-content-between flex-wrap">
             @foreach ($movies as $movie)
-                <article>
-                    {{-- <a href="{{ route('comics.show', $comic['id']) }}"> --}}
-                    
-                        <img src="{{ $movie['src'] }}" alt="movie poster" class="comic-thumb">
-                        <p>{{ $movie['title'] }}</p>
-
-                    </a>
-                </article>
+            <article class="card" style="width: 18rem;">
+                <img src="{{ $movie['src'] }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $movie['title'] }}</h5>
+                </div>
+            </article>
             @endforeach
         </div>
 
