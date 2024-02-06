@@ -11,7 +11,7 @@
 
         <div class="article-container">
 
-            <form action=" " method="POST">
+            <form action=" {{ route('movies.store') }} " method="POST">
                 @csrf
                 
                 <div class="mb-3">
