@@ -11,16 +11,16 @@
         </span>
 
         <div class="article-container">
-            {{-- @foreach ($comics as $comic)
+            @foreach ($movies as $movie)
                 <article>
-                    <a href="{{ route('comics.show', $comic['id']) }}">
+                    {{-- <a href="{{ route('comics.show', $comic['id']) }}"> --}}
                     
-                        <img src="{{ $comic['thumb'] }}" alt="comic thumb" class="comic-thumb">
-                        <p>{{ $comic['series'] }}</p>
+                        <img src="{{ $movie['src'] }}" alt="movie poster" class="comic-thumb">
+                        <p>{{ $movie['title'] }}</p>
 
                     </a>
                 </article>
-            @endforeach --}}
+            @endforeach
         </div>
 
     </div>
