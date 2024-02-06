@@ -7,7 +7,12 @@
                     Home
                     </a>
                 </li>
-                <li class="active"><a href="{{route('comics.index')}}">Comics</a></li>
+                <li class="active">
+                    <a href="{{route('comics.index')}}">Comics</a>
+                </li>
+                <li>
+                    <a href="{{route('comics.create')}}">Add Comics</a>
+                </li>
                 <li>Movies</li>
                 <li>Tv</li>
                 <li>Games</li>
