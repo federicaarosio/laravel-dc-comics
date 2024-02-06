@@ -15,6 +15,7 @@
                 <img src="{{ $movie['src'] }}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{ $movie['title'] }}</h5>
+                  <p>Description: {{ $movie['description'] }}</p>
                 </div>
             </article>
         </div>
