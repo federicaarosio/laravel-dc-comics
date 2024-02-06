@@ -29,7 +29,11 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $formData = $request->all();
+         $newMovie = Movie::create($formData);
+
+         return redirect()->route('movies.show', $newMovie->id);
+
     }
 
     /**
