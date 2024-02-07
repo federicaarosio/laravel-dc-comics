@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ComicController as ComicController;
 use App\Http\Controllers\MovieController as MovieController;
+use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,3 +38,5 @@ Route::get('/movies', [MovieController::class, 'index'])->name('movies.index');
 Route::post('/movies', [MovieController::class, 'store'])->name('movies.store');
 Route::get('/movies/create', [MovieController::class, 'create'])->name('movies.create');
 Route::get('/movies/{movie}', [MovieController::class, 'show'])->name('movies.show');
+Route::put('/movies/{movie}', [MovieController::class, 'update'])->name('movies.update');
+Route::get('/movies/{movie}/edit', [MovieController::class, 'edit'])->name('movies.edit');
