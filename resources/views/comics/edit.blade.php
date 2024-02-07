@@ -68,7 +68,7 @@
 
                 <div class="button-wrapper">
                     <button type="submit" class="add-btn">
-                        Add a new comic
+                        Edit comic
                     </button> 
                     <button type="reset"  class="reset-btn">
                         Reset

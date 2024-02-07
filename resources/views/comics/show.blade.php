@@ -18,15 +18,18 @@
                     <p>Price: {{ $comic['price'] }}</p>
                     <p>Sale Date: {{ $comic['sale_date'] }}</p>
                     <p>Type: {{ $comic['type'] }}</p>
+
+                    <div class="actions mb-3 pt-3">
+                        <a href="{{ route('comics.edit', $comic->id) }}">
+                            <button class="btn btn-primary">
+                                Edit this comic
+                            </button>
+                        </a>
+                    </div>
                 </article>
 
         </div>
 
-        <div class="button-wrapper">
-            <button>
-                Load more
-            </button> 
-        </div>
 
     </div>
 </section>
