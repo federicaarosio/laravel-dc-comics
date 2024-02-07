@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ComicController extends Controller
 {
@@ -29,6 +30,20 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate(
+            [
+                'title' => ['required', 'unique:comics', 'max:255'],
+                'description' => ['required'],
+                'thumb' => ['required', 'url:http,https'],
+                'price' => ['required'],
+                'series' => ['required', 'max:255' ],
+                'sale_date' => ['required', 'max:60'],
+                'type' => ['required', 'max:60'],
+            ], [
+                'title.required' => 'Please remember that "title" is required and must be less than 255 characters. Must be unique too.'
+            ]);
+
         // dd($request-> all());
         $formData = $request->all();
 
@@ -71,6 +86,20 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+
+        $request->validate(
+            [
+                'title' => ['required', 'max:255', Rule::unique('comics')->ignore($comic->id)],
+                'description' => ['required'],
+                'thumb' => ['required', 'url:http,https'],
+                'price' => ['required'],
+                'series' => ['required', 'max:255' ],
+                'sale_date' => ['required', 'max:60'],
+                'type' => ['required', 'max:60'],
+            ], [
+                'title.required' => 'Please remember that "title" is required and must be less than 255 characters. Must be unique too'
+            ]);
+
         $data = $request->all();
 
         $comic->update($data);
