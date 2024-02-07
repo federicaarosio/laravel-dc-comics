@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -29,6 +30,14 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                'title' => ['required', 'unique:movies' ,'max:255'],
+                'description' => ['required'],
+                'src' => ['required', 'url:http,https'],
+                'director' => ['required'],
+            ]);
+
          $formData = $request->all();
          $newMovie = Movie::create($formData);
 
@@ -50,15 +59,29 @@ class MovieController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
+        $movie = Movie::findOrFail($id);
+        return view('movies.edit', compact('movie'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Movie $movie)
     {
-        //
+        $request->validate(
+            [
+                'title' => ['required', 'max:255', Rule::unique('movies')->ignore($movie->id)],
+                'description' => ['required'],
+                'src' => ['required', 'url:http,https'],
+                'director' => ['required'],
+            ]);
+
+        $data = $request->all();
+
+        $movie->update($data);
+
+        return redirect()->route('movies.show', $movie->id);
     }
 
     /**
